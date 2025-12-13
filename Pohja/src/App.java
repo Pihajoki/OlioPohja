@@ -1,6 +1,20 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+        // Making an Object
+        NameOfClass object1Name = new NameOfClass();
+
+        // Giving attributes Values
+        object1Name.text = "TestText.";
+        object1Name.number = 12345;
+        object1Name.decimal = 1.23;
+
+        // Calling a method
+        object1Name.methodName();
+        object1Name.alsoMethodName();
+
+
+
     }
 } // App Ends
 
