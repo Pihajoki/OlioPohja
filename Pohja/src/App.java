@@ -61,6 +61,10 @@ public class App {
 
         o1SC2.subclassTest(); // We test override.
 
+
+// Static Members
+        StaticTest o1ST1 = new StaticTest("STesti", 404.404);
+        o1ST1.printSTData();
     } // Main end
 } // App End
 
@@ -139,7 +143,7 @@ class NameOfClass {
 
 // Making a Getter method (It reads a value of a private attribute.)
         public int getNumber(){
-            return number;
+            return number; // When we return data, we should always use it. Suchs as System.out.println(getNumber());
         }
 
         public void subclassTest(){ // We test we can print this with subclass.
@@ -158,7 +162,6 @@ class NameOfSubclass1 extends NameOfClass{
 
 // Second subclass with its own specific attributes.
 class NameOfSubclass2 extends NameOfClass{
-    String specificForThisSub;
 
         @Override
         public void subclassTest(){ // Overrides the values in parent class method with same name.
@@ -167,17 +170,28 @@ class NameOfSubclass2 extends NameOfClass{
 
 }
 
+// Static Members && Attributes.
+class StaticTest{
+    private String staticString;
+    private double staticNumber;
 
+    public StaticTest(String sS, double sN)
+    {
+        staticString = sS;
+        staticNumber = sN;
+    }
 
+    public void printSTData(){
+        System.out.println("STATIC CLASS TEST");
+        System.out.println("");
+        System.out.println(staticString);
+        System.out.println(staticNumber);
+        System.out.println("");
 
+    }
+}
 
-
-
-
-
-
-
-/*
+/* COPY PASTE POHJA
 ***************KOPIOI TÄMÄ MAINIIN***************
 
 NameOfClass1 object1Name = new NameOfClass1(false,"testText", 12345, 1.23); // Parameterized Constructor used
