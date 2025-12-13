@@ -27,17 +27,17 @@ public class App {
 
         System.out.println("Is it true or false: ");
         boolean isItOn2;
-        String usedForBoolean;
-        usedForBoolean = in.nextLine();
+        String usedForBoolean; // Needed for boolean userinputs.
+        usedForBoolean = in.nextLine(); // Sets our string as true/false.
 
-        if(usedForBoolean.equalsIgnoreCase("true")){
-            isItOn2 = true;
+        if(usedForBoolean.equalsIgnoreCase("true")){ // We check the user input.
+            isItOn2 = true; // We set it to true.
         } else {
-            isItOn2 = false;
+            isItOn2 = false; // We set it to false.
         }
         
         System.out.println("Give me a text: ");
-        String text2 = in.nextLine(); // Set userinput for String type
+        String text2 = in.nextLine(); // Set userinput for String type.
 
         System.out.println("Give me a number: ");
         int number2 = Integer.parseInt(in.nextLine()); // Set userinput for int type.
@@ -49,6 +49,18 @@ public class App {
 
                                                                                         System.out.println(" ");    // Making an empty line
         object3Name.printValuesMethod(); // Print the inputs user has given.
+
+
+// Sub-class 1 /Inheritance
+        NameOfSubclass1 o1SC1 = new NameOfSubclass1(); // Object created for subclass 1.
+
+        o1SC1.subclassTest(); // We can print date even if the subclass is empty.
+
+// Sub-class 2 / Override
+        NameOfSubclass2 o1SC2 = new NameOfSubclass2();
+
+        o1SC2.subclassTest(); // We test override.
+
     } // Main end
 } // App End
 
@@ -76,7 +88,7 @@ class NameOfClass {
             decimal = d;
         }
 
-    // Parameterless COnstructor / Parametritön muodostin ("Oletusmuodostin")
+    // Parameterless Constructor / Parametritön muodostin ("Oletusmuodostin")
         public NameOfClass(){
             isItOn = false;
             text = "";
@@ -130,13 +142,85 @@ class NameOfClass {
             return number;
         }
 
+        public void subclassTest(){ // We test we can print this with subclass.
+            System.out.println("TESTING TESTING WEEWOO");
+        }
+} // Your NameOfCass ends here.
+
 // ACCESS MODIFIERS WE USE: PUBLIC OR PRIVATE. (There is protected & Default.)
-// Public can be accessed from other classes.
-// Private can only be used inside the class.
+// Public can be accessed from other classes. (Main or Subclasses.)
+// Private can only be used inside the class. (Only in the class it is in.)
+
+// Making a sub-class (Inheritance) ((WE get attributes and methods.))
+class NameOfSubclass1 extends NameOfClass{
+
+}
+
+// Second subclass with its own specific attributes.
+class NameOfSubclass2 extends NameOfClass{
+    String specificForThisSub;
+
+        @Override
+        public void subclassTest(){ // Overrides the values in parent class method with same name.
+            System.out.println("SUBCLASS OVERRIDE");
+        }
+
+}
 
 
 
 
 
 
-} // Your class ends here.
+
+
+
+
+
+/*
+***************KOPIOI TÄMÄ MAINIIN***************
+
+NameOfClass1 object1Name = new NameOfClass1(false,"testText", 12345, 1.23); // Parameterized Constructor used
+NameOfClass1 object2Name = new NameOfClass1(); // Parameterless Constructor used
+
+***************KOPIOI TÄMÄ LUOKKAASI***************
+class NameOfClass1 {
+
+    // Attributes
+        private boolean isItOn;
+        private String text;
+        private int number;
+        private double decimal;
+
+
+    // Parameterized Construtor / Täysiparametrinen muodostin
+        public NameOfClass1(boolean iio, String t, int n, double d) {
+            isItOn = iio;
+            text = t;
+            number = n;
+            decimal = d;
+        }
+
+    // Parameterless Constructor / Parametritön muodostin ("Oletusmuodostin")
+        public NameOfClass1(){
+            isItOn = false;
+            text = "";
+            number = 0;
+            decimal = 0.00;
+        }
+
+    // Method
+        public void methodName(){
+
+        }
+        
+    // Setter
+        public void set-----(*TYPE* name){
+            this.----- = name;
+        }
+
+    // Getter
+        public int get----(){
+            return -----;
+        }
+*/
