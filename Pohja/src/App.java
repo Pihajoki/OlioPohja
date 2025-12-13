@@ -2,8 +2,8 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Making an Object
-        NameOfClass object1Name = new NameOfClass(false,"testText", 12345, 1.23); // Parameterized Constructor
-        NameOfClass object2Name = new NameOfClass();
+        NameOfClass object1Name = new NameOfClass(false,"testText", 12345, 1.23); // Parameterized Constructor used
+        NameOfClass object2Name = new NameOfClass(); // Parameterless Constructor used
 
         // Calling a method
         object1Name.methodName();
@@ -15,9 +15,6 @@ public class App {
         // Using our printValuesMethod to see values of our attributes.
         object1Name.printValuesMethod();
 
-
-
-
     }
 } // App End
 
@@ -26,13 +23,11 @@ public class App {
     // 2. We give our class a Name & Finnish it with {}.
 class NameOfClass {
 
-
 // We define attributes, we wish our object to have.
         boolean isItOn;
         String text;
         int number;
         double decimal;
-
 
 // Constructors / Muodostin
         // Few rules:
@@ -81,4 +76,15 @@ class NameOfClass {
                 System.out.println("Value of isItOn is: " + isItOn);
             }
         }
+
+
+
+
+
+
+
+
+
+
+
 } // Your class ends here.
