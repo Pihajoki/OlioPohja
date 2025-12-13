@@ -63,8 +63,12 @@ public class App {
 
 
 // Static Members
-        StaticTest o1ST1 = new StaticTest("STesti", 404.404);
+        StaticTest o1ST1 = new StaticTest("STekti", 404.404); // Adds 1 to count
+        StaticTest o1ST2 = new StaticTest("Test", 127.001); // Adds 2 to count
+        
         o1ST1.printSTData();
+
+        StaticTest.printCount(); // We need to call static-method with the class, instead of object.
     } // Main end
 } // App End
 
@@ -171,23 +175,46 @@ class NameOfSubclass2 extends NameOfClass{
 }
 
 // Static Members && Attributes.
+    /*  - When to use static members:
+            > If the value of an attribute needs to be the same for all objects of the class
+            >You want to access a method without creating an object. In other words,
+            there is no sense to create an object.
+        - Static members can be accessed through the class (not the object)
+        - Static method can only use static attributes. For example, if stString is NON-static
+        static method printCount() can't access it.
+        - Static attributes can be used in "normal", non-static methods. For example,
+        we can print the values of stString (non-static) and staticCount (static)
+        in a non-static method printSTData.*/
+        
 class StaticTest{
-    private String staticString;
-    private double staticNumber;
+    private String stString;
+    private double stDecimal;
+    private static int staticCount; // This is a static attribute.
 
-    public StaticTest(String sS, double sN)
+    // Parameterless Constructor / Parametritön muodostin ("Oletusmuodostin")
+    public StaticTest(){
+        stString = "";
+        stDecimal = 0.0;
+        staticCount++; // Adds a count everytime we make an object.
+    }
+    // Parameterized Construtor / Täysiparametrinen muodostin
+    public StaticTest(String sS, double sN) 
     {
-        staticString = sS;
-        staticNumber = sN;
+        stString = sS;
+        stDecimal = sN;
+        staticCount++; // Adds a count everytime we make an object.
     }
 
     public void printSTData(){
         System.out.println("STATIC CLASS TEST");
         System.out.println("");
-        System.out.println(staticString);
-        System.out.println(staticNumber);
-        System.out.println("");
+        System.out.println(stString);
+        System.out.println(stDecimal);
+        System.out.println("Count: " + staticCount);
+    }
 
+    public static void printCount(){ // Static method.
+        System.out.println("Count: " + staticCount);
     }
 }
 
