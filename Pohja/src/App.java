@@ -153,6 +153,10 @@ class NameOfClass {
         public void subclassTest(){ // We test we can print this with subclass.
             System.out.println("TESTING TESTING WEEWOO");
         }
+// This is how we can call from other class.
+        public void testOtherClass(StaticTest callingFromOtherClass){
+
+        }
 } // Your NameOfCass ends here.
 
 // ACCESS MODIFIERS WE USE: PUBLIC OR PRIVATE. (There is protected & Default.)
@@ -216,6 +220,15 @@ class StaticTest{
     public static void printCount(){ // Static method.
         System.out.println("Count: " + staticCount);
     }
+
+    public void callingFromOtherClass () { // We will call this method is our class NameOfClass
+        
+    }
+}
+
+// Abstract Class / Abstrakti luokka. We use subclasses to create methdos. Abstract class cant create methods.
+class AbstractClass{
+
 }
 
 /* COPY PASTE POHJA
