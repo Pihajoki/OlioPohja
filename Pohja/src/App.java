@@ -10,17 +10,15 @@ public class App {
 // Calling a method
         object1Name.methodName();
         object1Name.alsoMethodName();
-                                                                                        System.out.println(" ");    // Making an empty line
+
 // Using our printValuesMethod to see values of our attributes.
         object1Name.printValuesMethod();
-                                                                                        System.out.println(" ");    // Making an empty line
 
 // Using our setter.
         object2Name.setNumber(51);
 
 // Using our getter.
         System.out.println(object2Name.getNumber());
-                                                                                        System.out.println(" ");    // Making an empty line
 
 // Using user inputs in object.
         Scanner in = new Scanner(System.in); // Make a scanner, so we can ask user-inputs.
@@ -69,7 +67,12 @@ public class App {
         o1ST1.printSTData();
 
         StaticTest.printCount(); // We need to call static-method with the class, instead of object.
-    } // Main end
+
+// Abstract class
+        AbstractsSubClass asc1 = new AbstractsSubClass(3, 5);
+        asc1.calculateArea();
+        asc1.printArea();
+        } // Main end
 } // App End
 
 // Making a class.
@@ -226,9 +229,37 @@ class StaticTest{
     }
 }
 
-// Abstract Class / Abstrakti luokka. We use subclasses to create methdos. Abstract class cant create methods.
-class AbstractClass{
+// Abstract Class / Abstrakti luokka. We use subclasses to create methdos. !!Abstract class cant create objects!!
+    // We use abstract calss to "Force" other programmer (and us) to keep method names the same. Which helps to keep code easier to understand.
+abstract class AbstractClass{ // We define that the class is abstract.
 
+    public double area;
+
+    public abstract void calculateArea(); // Method will lose {}, because it cant have any "value".
+
+    public void printArea(){
+            System.out.println("Area is: " + area);
+    }
+}
+
+class AbstractsSubClass extends AbstractClass{
+
+    int l, w;
+
+    public AbstractsSubClass(){ // Constructor / Muodostin
+        l = 0;
+        w = 0;
+    }
+
+    public AbstractsSubClass(int l, int w){ // Constructor / Muodostin
+        this.l = l;
+        this.w = w;
+    }
+
+    @Override // We use override when we use abstract subclasses. This removes margin of error.
+    public void calculateArea() {
+        area = l * w;
+    }
 }
 
 /* COPY PASTE POHJA
