@@ -72,6 +72,13 @@ public class App {
         AbstractsSubClass asc1 = new AbstractsSubClass(3, 5);
         asc1.calculateArea();
         asc1.printArea();
+
+// Interface
+        Square s1 = new Square(5);
+        s1.calcArea();
+        s1.printArea();
+
+
         } // Main end
 } // App End
 
@@ -261,6 +268,50 @@ class AbstractsSubClass extends AbstractClass{
         area = l * w;
     }
 }
+
+// Interfaces can only have methods/Getter/Setters (Pretty close to abstract)
+interface Shape{
+
+    public double calcArea(); // This is an abstract method even if it does not show it.
+    public void printArea();
+
+}
+
+class Square implements  Shape{ // Subclass but we use IMPLEMENTS instead of EXTENDS
+
+    private double side; // Attribute
+    
+    public Square( int side) // Constructor
+    {
+        this.side = side;
+    }
+
+    @Override
+    public double calcArea(){ // Inherited
+        return side * side;
+    }
+
+    @Override
+    public void printArea(){ // Inherited
+        System.out.println(side*side);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* COPY PASTE POHJA
 ***************KOPIOI TÄMÄ MAINIIN***************
