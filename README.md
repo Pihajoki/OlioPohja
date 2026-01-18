@@ -7,5 +7,5 @@ Idea vähentää toistuvaa kirjoittamista, kun voit joko kopioida vain mitä tar
 - Staattiset methodit ja atribuutit
 - Abstrakti Luokka
 
-Jos kysyttävää, laita discord viestiä :D
+  
 (Tein tätä samoilla silmillä Zynin ja monsterin voimin. Voi olla etten itekkää ymmärrä tästä mitään ku herään.)
